@@ -110,16 +110,15 @@ nav.scrolled {
   padding:13px;
   border-radius:5px;
   font-weight:700;
-  opacity:0;
+  transform:translateX(130%);
   pointer-events:none;
-  transition:.25s opacity;
+  transition:.35s transform ease;
 }
 
 .mobile-book.show {
-  opacity:1;
+  transform:translateX(0);
   pointer-events:auto;
 }
-
 /* Floating WhatsApp button, added by interactive.js */
 .whatsapp {
   position: fixed;
