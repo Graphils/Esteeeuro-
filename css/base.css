@@ -30,6 +30,10 @@ body {
   font:15px/1.55 Inter,Arial,sans-serif;
 }
 
+body.menu-open {
+  overflow:hidden;
+}
+
 body.dark {
   --paper:#0b1222;
   --ink:#e7edf6;

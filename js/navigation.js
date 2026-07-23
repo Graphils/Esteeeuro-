@@ -24,8 +24,10 @@ const linksPanel = $('.links');
 menuBtn.addEventListener('click', () => {
   const open = linksPanel.classList.toggle('open');
   menuBtn.textContent = open ? '✕' : '☰';
+  document.body.classList.toggle('menu-open', open);
 });
 $$('.links a').forEach((a) => a.addEventListener('click', () => {
   linksPanel.classList.remove('open');
   menuBtn.textContent = '☰';
+  document.body.classList.remove('menu-open');
 }));

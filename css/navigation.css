@@ -119,6 +119,7 @@ nav.scrolled {
   transform:translateX(0);
   pointer-events:auto;
 }
+
 /* Floating WhatsApp button, added by interactive.js */
 .whatsapp {
   position: fixed;
