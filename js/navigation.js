@@ -22,19 +22,25 @@ $('#back').onclick = () => scrollTo({ top: 0, behavior: 'smooth' });
 const menuBtn = $('.menu');
 const linksPanel = $('.links');
 const navBackdrop = $('.nav-backdrop');
+const linksClose = $('.links-close');
+
+function openMenu() {
+  linksPanel.classList.add('open');
+  navBackdrop.classList.add('show');
+  document.documentElement.classList.add('menu-open');
+  document.body.classList.add('menu-open');
+}
 
 function closeMenu() {
   linksPanel.classList.remove('open');
   navBackdrop.classList.remove('show');
-  menuBtn.textContent = '☰';
+  document.documentElement.classList.remove('menu-open');
   document.body.classList.remove('menu-open');
 }
 
 menuBtn.addEventListener('click', () => {
-  const open = linksPanel.classList.toggle('open');
-  navBackdrop.classList.toggle('show', open);
-  menuBtn.textContent = open ? '✕' : '☰';
-  document.body.classList.toggle('menu-open', open);
+  linksPanel.classList.contains('open') ? closeMenu() : openMenu();
 });
-$$('.links a').forEach((a) => a.addEventListener('click', closeMenu));
+linksClose.addEventListener('click', closeMenu);
 navBackdrop.addEventListener('click', closeMenu);
+$$('.links a').forEach((a) => a.addEventListener('click', closeMenu));

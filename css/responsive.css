@@ -37,6 +37,18 @@
     padding:16px 0;
     border-bottom:1px solid var(--line);
   }
+  .links-close {
+    position:absolute;
+    top:22px;
+    right:22px;
+    width:36px;
+    height:36px;
+    border:1px solid var(--line);
+    border-radius:50%;
+    background:none;
+    color:var(--ink);
+    font-size:19px;
+  }
   .bookbar {
     grid-template-columns:1fr 1fr;
   }
