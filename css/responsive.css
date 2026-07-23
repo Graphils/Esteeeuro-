@@ -12,9 +12,26 @@
   }
   .menu {
     display:block;
-  }
-  .tools .btn {
+  }  .tools .btn {
     display:none;
+  }
+  .links.open {
+    display:flex;
+    position:fixed;
+    z-index:29;
+    top:65px;
+    left:0;
+    right:0;
+    flex-direction:column;
+    gap:0;
+    background:var(--white);
+    box-shadow:var(--shadow);
+    padding:6px 20px;
+  }
+  .links.open a {
+    color:var(--ink);
+    padding:14px 0;
+    border-bottom:1px solid var(--line);
   }
   .bookbar {
     grid-template-columns:1fr 1fr;
