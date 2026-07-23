@@ -77,6 +77,21 @@ nav.scrolled {
   display:none;
 }
 
+.nav-backdrop {
+  position:fixed;
+  inset:0;
+  z-index:31;
+  background:rgba(5,12,22,.5);
+  opacity:0;
+  pointer-events:none;
+  transition:.3s opacity ease;
+}
+
+.nav-backdrop.show {
+  opacity:1;
+  pointer-events:auto;
+}
+
 .back,.mobile-book {
   position:fixed;
   z-index:25;

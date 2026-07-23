@@ -18,16 +18,23 @@ window.addEventListener('scroll', () => {
 
 $('#back').onclick = () => scrollTo({ top: 0, behavior: 'smooth' });
 
-// Hamburger menu (mobile nav dropdown)
+// Hamburger menu (mobile nav drawer)
 const menuBtn = $('.menu');
 const linksPanel = $('.links');
+const navBackdrop = $('.nav-backdrop');
+
+function closeMenu() {
+  linksPanel.classList.remove('open');
+  navBackdrop.classList.remove('show');
+  menuBtn.textContent = '☰';
+  document.body.classList.remove('menu-open');
+}
+
 menuBtn.addEventListener('click', () => {
   const open = linksPanel.classList.toggle('open');
+  navBackdrop.classList.toggle('show', open);
   menuBtn.textContent = open ? '✕' : '☰';
   document.body.classList.toggle('menu-open', open);
 });
-$$('.links a').forEach((a) => a.addEventListener('click', () => {
-  linksPanel.classList.remove('open');
-  menuBtn.textContent = '☰';
-  document.body.classList.remove('menu-open');
-}));
+$$('.links a').forEach((a) => a.addEventListener('click', closeMenu));
+navBackdrop.addEventListener('click', closeMenu);
