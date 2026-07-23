@@ -1,0 +1,164 @@
+/* Hero pan animation and media queries */
+
+@keyframes pan {
+  to {
+    transform:scale(1.09) translate(-.7%,-.4%);
+  }
+}
+
+@media(max-width:900px) {
+  .links {
+    display:none;
+  }
+  .menu {
+    display:block;
+  }
+  .tools .btn {
+    display:none;
+  }
+  .bookbar {
+    grid-template-columns:1fr 1fr;
+  }
+  .field {
+    border-bottom:1px solid #dce3ed;
+  }
+  .bookbar .btn {
+    grid-column:span 2;
+    margin:10px 0 0;
+  }
+  .intro,.location,.contact-grid,.faq {
+    grid-template-columns:1fr;
+    gap:35px;
+  }
+  .cards {
+    grid-template-columns:repeat(2,1fr);
+  }
+  .amenities {
+    grid-template-columns:repeat(3,1fr);
+  }
+  .amenity:nth-child(5n) {
+    border-right:1px solid #2a3953;
+  }
+  .testimonial {
+    grid-template-columns:1fr;
+    padding:70px 40px;
+    gap:15px;
+  }
+  .foot {
+    grid-template-columns:repeat(3,1fr);
+  }
+  .foot>div:first-child {
+    grid-column:span 3;
+  }
+}
+
+@media(max-width:580px) {
+  .wrap {
+    width:calc(100% - 28px);
+  }
+  nav {
+    height:65px;
+  }
+  .hero h1 {
+    font-size:42px;
+  }
+  .hero p {
+    font-size:15px;
+  }
+  .hero-actions {
+    flex-direction:column;
+    align-items:stretch;
+    max-width:240px;
+  }
+  .hero-note {
+    display:none;
+  }
+  .bookbar {
+    bottom:15px;
+    width:calc(100% - 28px);
+    padding:8px;
+  }
+  .field {
+    padding:6px 10px;
+  }
+  .trust .wrap {
+    display:block;
+  }
+  .highlights {
+    margin-top:12px;
+    gap:12px;
+    font-size:10px;
+  }
+  .section {
+    padding:70px 0;
+  }
+  .section-head {
+    display:block;
+    margin-bottom:27px;
+  }
+  .section-head p {
+    margin-top:12px;
+  }
+  .image-stack {
+    height:380px;
+  }
+  .cards {
+    grid-template-columns:1fr;
+  }
+  .amenities {
+    grid-template-columns:repeat(2,1fr);
+  }
+  .amenity {
+    padding:20px 13px;
+    min-height:125px;
+  }
+  .gallery {
+    columns:2;
+    column-gap:9px;
+  }
+  .gallery figure {
+    margin-bottom:9px;
+  }
+  .stats .wrap {
+    grid-template-columns:1fr 1fr;
+    gap:25px;
+  }
+  .stat {
+    padding:0 13px;
+    border:0;
+  }
+  .num {
+    font-size:28px;
+  }
+  .tour {
+    height:460px;
+  }
+  .testimonial {
+    padding:60px 20px;
+  }
+  .faq h2,.contact h2 {
+    font-size:32px;
+  }
+  .form {
+    grid-template-columns:1fr;
+  }
+  .form textarea,.form .btn {
+    grid-column:span 1;
+  }
+  .foot {
+    grid-template-columns:1fr 1fr;
+  }
+  .foot>div:first-child {
+    grid-column:span 2;
+  }
+  .copyright {
+    display:block;
+  }
+  .copyright span:last-child {
+    display:block;
+    margin-top:8px;
+  }
+  .mobile-book {
+    display:block;
+  }
+}

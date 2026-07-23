@@ -1,0 +1,62 @@
+/* Guest testimonial / reviews slider (background is now theme-aware, fixes dark mode) */
+
+.testimonial {
+  display:grid;
+  grid-template-columns:.8fr 1.2fr;
+  gap:70px;
+  align-items:center;
+  background: var(--testimonial-bg);
+  color: var(--ink);
+  padding:80px max(20px,calc((100vw - 1180px)/2));
+}
+
+.testimonial h2 {
+  font:700 38px/1.16 Poppins;
+  margin:8px 0;
+}
+
+.quote {
+  font:600 clamp(22px,3vw,34px)/1.42 Poppins;
+  margin:12px 0 22px;
+}
+
+.stars {
+  color:#e6a927;
+  letter-spacing:3px;
+}
+
+.guest {
+  display:flex;
+  gap:11px;
+  align-items:center;
+}
+
+.guest img {
+  width:44px;
+  height:44px;
+  border-radius:50%;
+  object-fit:cover;
+}
+
+.guest b,.guest small {
+  display:block;
+}
+
+.guest small {
+  color:var(--muted);
+}
+
+.arr {
+  display:flex;
+  gap:8px;
+  margin-top:25px;
+}
+
+.arr button {
+  height:38px;
+  width:38px;
+  border-radius:50%;
+  border:1px solid var(--line);
+  background:var(--white);
+  color:var(--ink);
+}

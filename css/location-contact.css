@@ -1,0 +1,179 @@
+/* Location section, FAQ accordion, contact form */
+
+.location {
+  display:grid;
+  grid-template-columns:1fr .9fr;
+  gap:55px;
+  align-items:center;
+}
+
+.map {
+  height:405px;
+  background:linear-gradient(45deg,#dbe5d8 25%,#e9e1d2 25% 50%,#d5e5ef 50% 75%,#e8dfd2 75%);
+  background-size:85px 85px;
+  position:relative;
+  overflow:hidden;
+}
+
+.map:before {
+  content:"";
+  position:absolute;
+  inset:-30px;
+  background:repeating-linear-gradient(20deg,transparent 0 55px,rgba(255,255,255,.64) 57px 66px);
+}
+
+.pin {
+  position:absolute;
+  z-index:1;
+  left:53%;
+  top:45%;
+  width:42px;
+  height:42px;
+  border:7px solid rgba(59,130,246,.22);
+  border-radius:50%;
+  background:var(--blue);
+  background-clip:padding-box;
+}
+
+.near {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+  margin-top:23px;
+}
+
+.near div {
+  border-left:2px solid var(--blue);
+  padding-left:11px;
+  font-size:12px;
+  color:var(--muted);
+}
+
+.near b {
+  display:block;
+  color:var(--ink);
+  font-size:13px;
+}
+
+.faq {
+  display:grid;
+  grid-template-columns:.7fr 1.3fr;
+  gap:75px;
+}
+
+.faq h2,.contact h2 {
+  font:700 40px/1.15 Poppins;
+  margin:8px 0;
+}
+
+.faq p {
+  color:var(--muted);
+}
+
+.qa {
+  border-top:1px solid var(--line);
+}
+
+.qa:last-child {
+  border-bottom:1px solid var(--line);
+}
+
+.qa button {
+  width:100%;
+  border:0;
+  background:none;
+  color:var(--ink);
+  padding:18px 0;
+  text-align:left;
+  font-weight:700;
+  display:flex;
+  justify-content:space-between;
+}
+
+.qa div {
+  max-height:0;
+  overflow:hidden;
+  color:var(--muted);
+  font-size:13px;
+  transition:.3s;
+}
+
+.qa.open div {
+  max-height:100px;
+  padding-bottom:16px;
+}
+
+.qa button span {
+  color:var(--blue);
+  font-size:20px;
+}
+
+.contact {
+  background:var(--navy);
+  color:#fff;
+}
+
+.contact-grid {
+  display:grid;
+  grid-template-columns:.85fr 1.15fr;
+  gap:75px;
+}
+
+.contact p {
+  color:#b7c4d7;
+}
+
+.contact b {
+  display:block;
+  margin-top:19px;
+}
+
+.contact small {
+  color:#b7c4d7;
+}
+
+.form {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+}
+
+.form input,.form select,.form textarea {
+  border:1px solid #3b4960;
+  background:#172238;
+  color:#fff;
+  border-radius:4px;
+  padding:13px;
+  outline-color:var(--blue);
+}
+
+.form textarea,.form .btn {
+  grid-column:span 2;
+}
+
+.form textarea {
+  min-height:94px;
+  resize:vertical;
+}
+
+/* Added under the location text by interactive.js: exact address + Google Maps link */
+.location-address {
+  display: block;
+  margin: 14px 0 5px;
+  font: 600 15px Poppins;
+  color: var(--ink);
+}
+
+.directions {
+  display: inline-flex;
+  margin-top: 23px;
+  color: var(--blue);
+  font-weight: 700;
+  font-size: 13px;
+}
+
+@media (max-width: 580px) {
+  .location .map {
+    height: 300px;
+  }
+}

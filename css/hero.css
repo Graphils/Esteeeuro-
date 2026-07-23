@@ -1,0 +1,200 @@
+/* Hero banner and the check-in/check-out booking bar */
+
+.hero {
+  height:100svh;
+  min-height:720px;
+  max-height:980px;
+  position:relative;
+  overflow:hidden;
+  display:grid;
+  align-items:center;
+  color:#fff;
+  background:#0a1324;
+}
+
+.hero:after {
+  content:"";
+  inset:0;
+  position:absolute;
+  background:linear-gradient(90deg,rgba(5,13,29,.84),rgba(5,13,29,.5) 46%,rgba(5,13,29,.15));
+}
+
+.hero-img {
+  position:absolute;
+  inset:0;
+  background:url('../assets/images/photo-01.jpg') center/cover;
+  animation:pan 14s ease-in-out infinite alternate;
+}
+
+.hero .wrap {
+  position:relative;
+  z-index:1;
+  padding-top:70px;
+}
+
+.hero-copy {
+  max-width:650px;
+}
+
+.hero h1 {
+  font:700 clamp(42px,6.3vw,75px)/1.09 Poppins;
+  margin:14px 0 20px;
+}
+
+.hero p {
+  font-size:17px;
+  line-height:1.7;
+  max-width:560px;
+  color:#e8edf5;
+}
+
+.hero-actions {
+  display:flex;
+  gap:12px;
+  margin-top:28px;
+}
+
+.hero-note {
+  position:absolute;
+  z-index:2;
+  bottom:35px;
+  right:max(20px,calc((100% - 1180px)/2));
+  text-align:right;
+  font-size:11px;
+  letter-spacing:1.4px;
+  text-transform:uppercase;
+  color:#e6ecf5;
+}
+
+.hero-note b {
+  display:block;
+  font-size:16px;
+  margin-top:4px;
+  letter-spacing:0;
+}
+
+.bookbar {
+  position:absolute;
+  z-index:3;
+  left:50%;
+  bottom:32px;
+  translate:-50%;
+  width:min(1050px,calc(100% - 40px));
+  padding:14px;
+  background:rgba(255,255,255,.92);
+  backdrop-filter:blur(14px);
+  border-radius:7px;
+  box-shadow:var(--shadow);
+  display:grid;
+  grid-template-columns:1fr 1fr .8fr auto;
+  gap:0;
+  color:var(--ink);
+}
+
+.field {
+  padding:4px 17px;
+  border-right:1px solid #dce3ed;
+}
+
+.field label {
+  display:block;
+  font-size:10px;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  font-weight:700;
+  color:#64748b;
+}
+
+.field input,.field select {
+  width:100%;
+  border:0;
+  outline:0;
+  background:transparent;
+  padding:4px 0;
+  color:#172033;
+  font-weight:600;
+}
+
+.bookbar .btn {
+  margin-left:13px;
+  min-width:135px;
+}
+
+/* Hero slideshow (added by hero.js, which swaps the static photo for rotating slides) */
+.hero {
+  min-height: 680px;
+  height: min(92svh, 900px);
+}
+
+.hero-img {
+  animation: none;
+  background: none !important;
+  transition: none;
+}
+
+.hero-slides,
+.hero-slide {
+  position: absolute;
+  inset: 0;
+}
+
+.hero-slides {
+  overflow: hidden;
+}
+
+.hero-slide {
+  background: center/cover no-repeat;
+  opacity: 0;
+  transform: scale(1.08);
+  transition: opacity 1.3s ease, transform 7s ease;
+}
+
+.hero-slide.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Strip that the quick booking bar gets moved into, below the hero */
+.availability {
+  position: relative;
+  z-index: 5;
+  background: var(--paper);
+  padding: 0 0 30px;
+}
+
+.availability .bookbar {
+  position: relative;
+  left: auto;
+  bottom: auto;
+  translate: 0;
+  width: min(1050px, calc(100% - 40px));
+  margin: -34px auto 0;
+  border: 1px solid var(--line);
+}
+
+@media (max-width: 580px) {
+  .hero {
+    height: 640px;
+    min-height: 640px;
+  }
+  .hero .wrap {
+    padding-top: 38px;
+  }
+  .hero-copy {
+    padding-bottom: 35px;
+  }
+  .availability {
+    padding-bottom: 18px;
+  }
+  .availability .bookbar {
+    width: calc(100% - 28px);
+    margin: -20px auto 0;
+    grid-template-columns: 1fr 1fr;
+  }
+  .availability .field {
+    min-width: 0;
+  }
+  .availability .bookbar .btn {
+    grid-column: span 2;
+  }
+}
