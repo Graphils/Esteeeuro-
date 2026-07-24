@@ -85,8 +85,8 @@ $('#bookingDone').addEventListener('click', () => modal.classList.remove('show')
 $('#bookWhatsApp').addEventListener('click', () => {
   const message = bookingMessage();
   if (!message) return;
-  window.open(`https://wa.me/${BOOKING_WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, '_blank', 'noopener');
   showBookingConfirmation('WhatsApp');
+  window.location.href = `https://wa.me/${BOOKING_WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 });
 
 $('#bookEmail').addEventListener('click', () => {
