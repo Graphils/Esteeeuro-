@@ -77,6 +77,10 @@ nav.scrolled {
   display:none;
 }
 
+.links-close {
+  display:none;
+}
+
 .nav-backdrop {
   position:fixed;
   inset:0;
