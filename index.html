@@ -403,8 +403,8 @@
         <option>Deluxe One-Bedroom</option>
         <option>Executive Suite</option>
       </select>
-      <input required type="date" name="checkin">
-      <input required type="date" name="checkout">
+      <label class="date-field"><span>Check-in</span><input required type="date" name="checkin"></label>
+      <label class="date-field"><span>Check-out</span><input required type="date" name="checkout"></label>
       <textarea name="notes" placeholder="Special requests"></textarea>
       <label class="terms-check">
         <input type="checkbox" id="agreeTerms" required>
@@ -418,6 +418,12 @@
         <button type="button" class="btn blue" id="bookEmail">Book via Email</button>
       </div>
     </form>
+    <div class="booking-success" id="bookingSuccess" hidden>
+      <span class="success-check">✓</span>
+      <h2>Request ready.</h2>
+      <p id="successText">Your reservation details have been prepared. Send them over to confirm with our team.</p>
+      <button type="button" class="btn blue" id="bookingDone">Done</button>
+    </div>
   </div>
 </div>
 

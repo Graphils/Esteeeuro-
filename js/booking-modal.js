@@ -4,8 +4,19 @@ const BOOKING_WHATSAPP_NUMBER = '233533868869';
 const BOOKING_EMAIL_ADDRESS = 'reservations@esteeeuroapartment.com';
 
 const modal = $('#bookingmodal');
+const bookingForm = $('#bookingform');
+const bookingSuccess = $('#bookingSuccess');
 
-$$('.open-book').forEach((btn) => btn.addEventListener('click', () => modal.classList.add('show')));
+function resetBookingModal() {
+  bookingForm.hidden = false;
+  bookingSuccess.hidden = true;
+  bookingForm.reset();
+}
+
+$$('.open-book').forEach((btn) => btn.addEventListener('click', () => {
+  resetBookingModal();
+  modal.classList.add('show');
+}));
 
 // Every element with data-close="someModalId" closes that modal.
 // addEventListener (rather than .onclick=) so this can never be silently
@@ -32,6 +43,7 @@ document.addEventListener('keydown', (e) => {
 // Quick check-in/check-out bar also opens the full reservation modal
 $('#quick').addEventListener('submit', (e) => {
   e.preventDefault();
+  resetBookingModal();
   modal.classList.add('show');
 });
 // A plain Enter press inside the booking form shouldn't submit/reload the page
@@ -47,9 +59,8 @@ $$('.open-terms').forEach((link) => {
 });
 
 function bookingMessage() {
-  const form = $('#bookingform');
-  if (!form.reportValidity()) return null;
-  const f = new FormData(form);
+  if (!bookingForm.reportValidity()) return null;
+  const f = new FormData(bookingForm);
   return (
     `Hello Estee Euro Apartment, I'd like to reserve a suite.\n\n` +
     `Name: ${f.get('name')}\n` +
@@ -63,16 +74,13 @@ function bookingMessage() {
 }
 
 function showBookingConfirmation(channel) {
-  modal.querySelector('.box').innerHTML =
-    '<div style="text-align:center;padding:35px 12px">' +
-    '<span style="font-size:42px;color:#10b981">✓</span>' +
-    '<h2>Request ready.</h2>' +
-    `<p>Your reservation details have been prepared. Send them over on ${channel} to confirm with our team.</p>` +
-    '<button class="btn blue" data-close="bookingmodal">Done</button>' +
-    '</div>';
-  // the new "Done" button needs its own close handler since it didn't exist when we set those up above
-  modal.querySelector('[data-close]').addEventListener('click', () => modal.classList.remove('show'));
+  bookingForm.hidden = true;
+  bookingSuccess.hidden = false;
+  $('#successText').textContent =
+    `Your reservation details have been prepared. Send them over on ${channel} to confirm with our team.`;
 }
+
+$('#bookingDone').addEventListener('click', () => modal.classList.remove('show'));
 
 $('#bookWhatsApp').addEventListener('click', () => {
   const message = bookingMessage();
