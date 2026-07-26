@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
   locationText.insertAdjacentHTML(
     'afterend',
     '<span class="location-address">ACP Estates, Pokuase · Near Whitehouse Junction, Accra</span>' +
-    '<a class="directions" href="https://www.google.com/maps/search/?api=1&query=ACP+Estates+Pokuase+near+Whitehouse+Junction+Accra+Ghana" target="_blank" rel="noopener">Get directions →</a>'
+    '<a class="directions" href="https://www.google.com/maps/search/?api=1&query=5.6794958,-0.2976124" target="_blank" rel="noopener">Get directions →</a>'
   );
 
   $('.contact-grid > div').insertAdjacentHTML(
