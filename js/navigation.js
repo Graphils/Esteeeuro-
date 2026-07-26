@@ -43,4 +43,16 @@ menuBtn.addEventListener('click', () => {
 });
 linksClose.addEventListener('click', closeMenu);
 navBackdrop.addEventListener('click', closeMenu);
-$$('.links a').forEach((a) => a.addEventListener('click', closeMenu));
+$$('.links a').forEach((a) => {
+  a.addEventListener('click', (e) => {
+    const targetId = a.getAttribute('href');
+    const wasOpen = linksPanel.classList.contains('open');
+    if (wasOpen) {
+      e.preventDefault();
+      closeMenu();
+      setTimeout(() => {
+        $(targetId)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 320);
+    }
+  });
+});

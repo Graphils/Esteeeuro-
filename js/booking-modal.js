@@ -58,6 +58,18 @@ $$('.open-terms').forEach((link) => {
   });
 });
 
+// Apartment tour video: opens + autoplays on click, pauses whenever the modal closes
+const videoModal = $('#videomodal');
+const tourVideo = $('#tourvideo');
+$$('.open-video').forEach((btn) => btn.addEventListener('click', () => {
+  videoModal.classList.add('show');
+  tourVideo.currentTime = 0;
+  tourVideo.play().catch(() => {});
+}));
+new MutationObserver(() => {
+  if (!videoModal.classList.contains('show')) tourVideo.pause();
+}).observe(videoModal, { attributes: true, attributeFilter: ['class'] });
+
 function bookingMessage() {
   if (!bookingForm.reportValidity()) return null;
   const f = new FormData(bookingForm);

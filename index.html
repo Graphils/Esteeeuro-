@@ -217,8 +217,8 @@
         <span class="eyebrow">Explore before you arrive</span>
         <h2>A closer look at your next stay.</h2>
         <p>Browse the interiors, choose the suite that fits, and reserve your dates in just a few moments.</p>
-        <button class="play open-book" aria-label="Reserve your stay">→</button>
-        <small style="display:block;margin-top:8px;letter-spacing:1px">RESERVE YOUR STAY</small>
+        <button class="play open-video" aria-label="Play apartment tour video">▶</button>
+        <small style="display:block;margin-top:8px;letter-spacing:1px">WATCH THE TOUR</small>
       </div>
     </div>
   </section>
@@ -240,7 +240,7 @@
     </div>
     <div>
       <div class="stars">★★★★★</div>
-      <p class="quote" id="quote">"The location was perfect, Wi-Fi was fast, and the suite felt like home. Everything was quietly taken care of."</p>
+      <p class="quote" id="quote">“The location was perfect, Wi-Fi was fast, and the suite felt like home. Everything was quietly taken care of.”</p>
       <div class="guest">
         <img id="guestimg" src="assets/images/photo-15.jpg" alt="Guest portrait">
         <div><b id="guestname">Kwame B.</b><small id="guestrole">Business traveller</small></div>
@@ -304,8 +304,8 @@
     <div class="wrap contact-grid">
       <div>
         <span class="eyebrow">Reserve your stay</span>
-        <h2>Let's make room for you.</h2>
-        <p>Send your preferred dates and we'll be in touch to confirm availability.</p>
+        <h2>Let’s make room for you.</h2>
+        <p>Send your preferred dates and we’ll be in touch to confirm availability.</p>
         <b>Call or WhatsApp</b><small>0533 868 869<br>+233 533 868 869</small>
         <b>Email us</b><small>Reservations and stay enquiries welcomed</small>
       </div>
@@ -398,7 +398,7 @@
     <button class="close" data-close="bookingmodal">×</button>
     <span class="eyebrow">Stay request</span>
     <h2>Reserve your suite</h2>
-    <p>Share your dates and we'll confirm availability directly.</p>
+    <p>Share your dates and we’ll confirm availability directly.</p>
     <form class="booking" id="bookingform">
       <input required name="name" placeholder="Full name">
       <input required type="email" name="email" placeholder="Email address">
@@ -449,6 +449,16 @@
       <li><b>Belongings.</b> Estee Euro Apartment is not responsible for the loss of personal belongings. Management reserves the right to refuse service or terminate a stay at any time if these rules are violated.</li>
     </ol>
     <button type="button" class="btn blue" data-close="termsmodal" style="margin-top:16px">I've read this</button>
+  </div>
+</div>
+
+<div class="modal videomodal" id="videomodal" role="dialog" aria-modal="true" aria-label="Apartment tour video">
+  <div class="box">
+    <button class="close" data-close="videomodal" style="color:white">×</button>
+    <video id="tourvideo" controls playsinline>
+      <source src="assets/videos/apartment-tour.mp4" type="video/mp4">
+      Your browser doesn't support embedded video. You can download the file directly instead.
+    </video>
   </div>
 </div>
 

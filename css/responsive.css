@@ -38,6 +38,7 @@
     border-bottom:1px solid var(--line);
   }
   .links-close {
+    display:block;
     position:absolute;
     top:22px;
     right:22px;
