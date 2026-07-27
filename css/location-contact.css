@@ -2,15 +2,15 @@
 
 .location {
   display:grid;
-  grid-template-columns:1fr .9fr;
-  gap:55px;
-  align-items:center;
+  grid-template-columns:1fr;
+  gap:35px;
 }
 
 .map {
-  height:405px;
+  height:520px;
   position:relative;
   overflow:hidden;
+  border-radius:8px;
 }
 
 .map iframe {
