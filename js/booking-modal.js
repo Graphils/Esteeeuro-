@@ -1,7 +1,7 @@
 // Reservation modal: opens from any ".open-book" button, plus form submissions.
 // Business contact details used to build the WhatsApp / email messages:
 const BOOKING_WHATSAPP_NUMBER = '233533868869';
-const BOOKING_EMAIL_ADDRESS = 'reservations@esteeeuroapartment.com';
+const BOOKING_EMAIL_ADDRESS = 'eurohouse25@gmail.com';
 
 const modal = $('#bookingmodal');
 const bookingForm = $('#bookingform');
